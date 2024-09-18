@@ -1,5 +1,7 @@
 import React from "react"
-import Home from '@/components/home/page'
+import Demo from '@/components/demo/page'
+import Header from '@/components/header/page'
+import Footer from '@/components/footer/page'
 
 export const metadata = {
   title: 'TheFateGame - Thrilling Mines Game Experience | Test Your Luck Now!',
@@ -10,6 +12,10 @@ export const metadata = {
 export default function page () {
 
   return(
-    <Home/>
+    <>
+    <Header/>
+    <Demo/>
+    <Footer/>
+    </>
   )
 }

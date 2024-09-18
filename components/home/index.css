@@ -1,0 +1,43 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.home .home_hero_one {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.home .home_hero_one::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11,38,52,0.75); 
+    z-index: 5;
+}
+
+.home .background_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.home .home_hero_two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    max-width: 500px;
+    max-height: 600px;
+}

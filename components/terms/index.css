@@ -1,0 +1,24 @@
+.terms{
+    background-color: var(--body-color);
+    width: 100%;
+    padding-bottom: 2em;
+}
+.terms h1{
+    color: var(--menu_color);
+font-size: 2rem;
+text-align: center;
+padding: 1em 0 .5em 0;
+}
+.terms p{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: var(--header_color);
+    border-radius: 5px;
+    
+}
+.terms b{
+    color: var(--footer_text_color);
+    font-size: 1rem;
+    font-weight: 400;
+}

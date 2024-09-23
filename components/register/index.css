@@ -1,0 +1,189 @@
+.register{
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 4em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.register_step_one,.register_step_two{
+    width: 40%;
+    margin: 0 auto;
+    padding: 1.5em;
+    background-color: var(--form_color);
+    border-radius: 10px;
+}
+.register_step_one h1,.register_step_two h1{
+color: var(--menu_color);
+font-size:1.1rem;
+text-align: center;
+
+}
+.register_step_one h2,.register_step_two h2{
+    color: var(--form_text);
+    font-size:1rem;
+    text-align: center;
+    padding-top: .5em;
+ }
+ .register_step_one form{
+    width: 80%;
+    margin: 2em auto;
+    
+ }
+.register_step_one label{
+    display: block;
+    color: var(--form_text);
+    font-weight: 500;
+    font-size: .9rem;
+    padding-bottom: .5em;
+}
+.register_step_one input{
+    display: block;
+    width: 100%;
+    color: var(--menu_color);
+    font-weight: 400;
+    font-size: .9rem;
+    padding: .5em 1em;
+    border: .1px solid var(--form_text);
+    background-color: var(--body-color);
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+.register_step_one sup{
+    color: red;
+}
+.register_step_one p{
+    font-size: .8rem;
+    color: var(--footer_text_color);
+    padding: 1em 0;
+}
+.register_step_one button{
+    width: 100%;
+    padding: .75em 1em;
+    text-align: center;
+    color: var(--body_color);
+    background: var(--button_color);
+    margin: 1em auto;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.register_step_one span{
+text-align: center;
+width: 100%;
+display: block;
+font-size: .9rem;
+color: var(--form_text);
+margin-top: 2em;
+
+}
+.register_step_one span a{
+    color: var(--menu_color);
+    font-weight: 500;
+}
+.register_step_two .register_terms{
+    width: 90%;
+    margin: 1em auto;
+    padding: 1.5em;
+    background-color: var(--body-color);
+    border-radius: 5px;
+    height: 300px;
+    scroll-behavior: smooth;
+    overflow: scroll;
+
+}
+.register_step_two .register_terms h3{
+    color: var(--menu_color);
+    font-size:1rem;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.register_step_two .register_terms p b{
+    color: var(--menu_color);
+    font-size: .8rem;
+    font-weight: 500;
+    padding-bottom: 1em;
+}
+.register_step_two .register_terms p {
+    color: var(--form_text);
+    font-size: .8rem;
+    font-weight: 400;
+    padding-bottom: 1em;
+}
+.register_step_two span{
+    display: block;
+    width: 90%;
+margin: 0 auto;
+}
+.register_step_two input{
+    margin-right: .5em;
+}
+.register_step_two span label{
+    color: var(--menu_color);
+    font-size: .8rem;
+    font-weight: 500;
+}
+.register_step_two form{
+    width: 100%;
+}
+.register_step_two form  button{
+    width: 90%;
+    display: block;
+    padding: .75em 1em;
+    text-align: center;
+    color: var(--body_color);
+    background: var(--button_color);
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 1em auto;
+}
+.register_step_two form div{
+    width: 100%;
+    padding: .75em 1em;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: .9rem;
+    color: var(--form_text);
+    text-align: center;
+
+}
+.register_step_two form div a{
+    color: var(--menu_color);
+    font-weight: 500;
+}
+
+@media screen and (max-width:900px) {
+.register_step_one,.register_step_two{
+    width: 60%;
+
+}
+.register_step_two .register_terms {
+height: 400px;
+}
+}
+@media screen and (max-width:600px) {
+    .register_step_one,.register_step_two{
+        width: 90%;
+    
+    }
+    .register_step_one form {
+        width: 95%;
+        margin: 2em auto;
+    }
+    .register_step_two .register_terms {
+    height: 300px;
+    width: 100%;
+    padding: 1em;
+    }
+   
+    .register_step_two span{
+    width: 100%;
+
+    }
+.register_step_two form  button{
+width: 100%;
+}
+.register{
+    padding: 2em 0;
+}
+    }

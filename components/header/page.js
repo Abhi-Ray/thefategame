@@ -37,8 +37,8 @@ export default function Page() {
                         </>
                     ) : (
                         <>
-                            <li><Link href="/Login"><button>Login</button></Link></li>
-                            <li><Link href="/Register"><button>Register</button></Link></li>
+                            <li><Link href="/login"><button>Login</button></Link></li>
+                            <li><Link href="/register"><button>Register</button></Link></li>
                         </>
                     )}
                 </ul>

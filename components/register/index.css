@@ -151,7 +151,14 @@ margin: 0 auto;
     color: var(--menu_color);
     font-weight: 500;
 }
-
+.error-msg{
+    color: red;
+    font-size: .9rem;
+    padding: .5em 0;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
 @media screen and (max-width:900px) {
 .register_step_one,.register_step_two{
     width: 60%;

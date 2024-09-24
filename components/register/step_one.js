@@ -7,7 +7,8 @@ import Link from "next/link"
 export default function Page({ setStep, setMobile }) {
     // State to track whether the user is registering and to hold form data
     const [register, setRegister] = useState(false);
-
+  const [error, setError] =useState(false)
+    
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -17,7 +18,9 @@ export default function Page({ setStep, setMobile }) {
         coupon: ""
     });
 
-
+    setTimeout(()=>{
+        setError(false)
+        },2000)
     // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
@@ -37,6 +40,8 @@ export default function Page({ setStep, setMobile }) {
           // If the response is not OK (e.g., status code not 200), throw an error
           if (!response.ok) {
             throw new Error('Something went wrong!');
+            setError(true)
+
           }
       
           // Parse the JSON response
@@ -49,6 +54,8 @@ export default function Page({ setStep, setMobile }) {
         } catch (error) {
           // Log any error that occurs during the registration process
           console.error('Error during registration:', error);
+            setError(true)
+
         }
         */
 
@@ -140,6 +147,10 @@ export default function Page({ setStep, setMobile }) {
 
                 <span>Already have an account? <Link href="/login">Sign In</Link></span>
             </form>
+            {
+                        error &&
+                        <p className="error-msg">Something went wrong</p>
+                    }
         </div>
     );
 }

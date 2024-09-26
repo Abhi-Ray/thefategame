@@ -8,7 +8,7 @@ export default function Page({ setStep, setMobile }) {
     // State to track whether the user is registering and to hold form data
     const [register, setRegister] = useState(false);
   const [error, setError] =useState(false)
-    
+  const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -24,7 +24,7 @@ export default function Page({ setStep, setMobile }) {
     // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
-
+        setLoading(true);
         // Commented out the original API request part
         /*
         try {
@@ -56,7 +56,10 @@ export default function Page({ setStep, setMobile }) {
           console.error('Error during registration:', error);
             setError(true)
 
+        }finally {
+            setLoading(false); // Re-enable the button once the process is complete
         }
+
         */
 
         // Move to the next step immediately after form submission
@@ -143,7 +146,9 @@ export default function Page({ setStep, setMobile }) {
                 <p>
                     By submitting your phone number, you are opting-in to receive marketing communications & offers from Fate.
                 </p>
-                <button type="submit">Continue</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? "Processing..." : "Continue"}
+                </button>
 
                 <span>Already have an account? <Link href="/login">Sign In</Link></span>
             </form>

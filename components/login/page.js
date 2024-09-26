@@ -4,10 +4,13 @@ import Header from '@/components/header/page'
 import Footer from '@/components/footer/page'
 import './index.css'
 import Link from "next/link"
-
+import { useRouter } from "next/navigation"
 export default function Page() {
   // State to track if the user is logged in
   const [login, setLogin] = useState(false)
+const router = useRouter();
+const [error, setError] =useState(false)
+const [loading, setLoading] = useState(false);
 
   // State to manage form input values (email and password)
   const [formdata, setFormdata] = useState({
@@ -15,12 +18,18 @@ export default function Page() {
     password: ""
   })
 
+  setTimeout(()=>{
+    setError(false)
+    },2000)
+
   // State to toggle password visibility
   const [view, setView] = useState(false)
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission (page reload)
+    setLoading(true);
+
     try {
       // Send POST request to login API with form data
       const response = await fetch('/api/login', {
@@ -32,9 +41,12 @@ export default function Page() {
       })
       setLogin(true) // Set login state to true on successful login
       console.log('Login Successful:', response)
+      router.push('/game')
     } catch (error) {
       console.error("Something went wrong", error) // Handle error if request fails
-    }
+    }finally {
+      setLoading(false); // Re-enable the button once the process is complete
+  }
   }
 
   // Handle input field changes for email and password
@@ -84,9 +96,14 @@ export default function Page() {
             </div>
 
             {/* Submit button */}
-            <button type="submit">Sign In</button>
+            <button type="submit" disabled={loading}>
+                    {loading ? "Logging..." : "Sign In"}
+                </button>
           </form>
-
+{
+                error &&
+                <p className="error-msg">Something went wrong</p>
+            }
           {/* Links for forgotten password and account registration */}
           <div className="login_bottom">
             <Link href="/forgot">Forgot Password</Link>
